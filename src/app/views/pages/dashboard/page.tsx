@@ -5,7 +5,9 @@ import './page.scss';
 
 const Dashboard = (): ReactNode => {
     const dispatch = useDispatch();
-    const { loading, data, number } = useSelector((state: RootState) => state.example);
+    const { loading, data, number } = useSelector(
+        (state: RootState) => state.example
+    );
 
     useEffect(() => {
         const randomNumber = Math.floor(Math.random() * 20) + 1;
@@ -13,10 +15,16 @@ const Dashboard = (): ReactNode => {
     }, []);
 
     return (
-        <div className="dashboard">
-            {loading ? <>Loading...</> : JSON.stringify(data)}
-            <button onClick={(() => dispatch(updateNumber(number + 5)))}>{number}</button>
-        </div>
+        <>
+            <div className="dashboard">
+                {loading ? <>Loading...</> : JSON.stringify(data)}
+                <button onClick={() => dispatch(updateNumber(number + 5))}>
+                    {number}
+                </button>
+            </div>
+
+            <h1 className=" font-bold text-7xl underline ">Hello world!</h1>
+        </>
     );
 };
 
