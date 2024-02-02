@@ -1,7 +1,6 @@
 import { ReactNode, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, exampleAction, updateNumber } from '~/store';
-import './page.scss';
 
 const Dashboard = (): ReactNode => {
     const dispatch = useDispatch();
