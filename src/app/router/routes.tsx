@@ -3,6 +3,8 @@ import { appRoutes } from '~/views/pages';
 import LayoutOne from '~/views/layouts/LayoutOne';
 import { wrapRoutes } from './wrapper';
 import { Route } from './types';
+import Register from '@pages/register';
+import Login from '@pages/login';
 
 const routes: Route = wrapRoutes({
     path: '/app',
@@ -12,7 +14,9 @@ const routes: Route = wrapRoutes({
 });
 
 export const router = createBrowserRouter([
-    { path: '/', element: <>Hello</>, index: true },
-    routes,
-    { path: '*', element: <>Not found</> }
+    { path: 'login', element: <Login/>, index: true, },
+    { path: '/', element: <Login/>, index: true, },
+    { path: 'register', element: <Register/> },
+    { path: '*', element: <>Not found</> },
+    routes
 ]);
