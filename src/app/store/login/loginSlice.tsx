@@ -5,8 +5,9 @@ import storage from 'redux-persist/lib/storage';
 const initialState: any=
 {
     isRequesting: false,
-    loginData: null,
+    userData: null,
     error: null,
+    isAuthenticated: false
 };
 
 const loginSlice=createSlice({
@@ -15,25 +16,35 @@ const loginSlice=createSlice({
     reducers: {
         loginRequest: (state, _action:PayloadAction<any>) => {
             state.isRequesting=true;
-            state.loginData=null;
+            state.error=null;
+            state.userData=null;
+            state.isAuthenticated=false;
+
         }, loginSuccess: (state, action:PayloadAction<any>) => {
             state.isRequesting=false;
-            state.loginData=action.payload;
+            state.error=null;
+            state.userData=action.payload;
+            state.isAuthenticated=true;
 
         }, loginFail: (state, action:PayloadAction<any>) => {
             state.isRequesting=false;
-            state.loginData=null;
+            state.userData=null;
             state.error=action.payload;
+            state.isAuthenticated=false;
 
         },
+        clearLoginState: (state) => {
+            // Reset the state to the initial state
+            return initialState;
+        }
     }
 });
 
 const loginPersistConfig = {
-    key: 'loginData',
+    key: 'userData',
     storage,
     keyPrefix: '',
-    whitelist: ['loginData'],
+    whitelist: ['userData', 'isAuthenticated'],
 };
-export const { loginFail, loginRequest, loginSuccess }=loginSlice.actions;
+export const { loginFail, loginRequest, loginSuccess, clearLoginState }=loginSlice.actions;
 export const loginReducer= persistReducer(loginPersistConfig, loginSlice.reducer);

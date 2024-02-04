@@ -61,7 +61,7 @@ const Register = () => {
                         name='phone'
                         errors={error?.phone?.message}
                         register={register}
-                        />
+                    />
                 </div>
                 <div className="mb-4">
                     <Input
@@ -82,8 +82,10 @@ const Register = () => {
                         Register
                     </button>
                 </div>
-                <div className="w-full flex justify-center mt-2  font-bold py-2 px-4 ">
-                    <span className='mr-1'>Already have an account? </span>
+                <div className="w-full flex flex-col items-center justify-center mt-2  font-bold py-2 px-4 ">
+                    {/* <span className='mr-1'>Already have an account? </span> */}
+                    <div className='w-full border-gray-300 border border-solid my-2 ' ></div>
+
                     <Link to={'/login'}
                         className="rounded text-blue-500  focus:outline-none focus:shadow-outline"
                         type="button"

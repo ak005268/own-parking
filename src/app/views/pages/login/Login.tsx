@@ -2,24 +2,26 @@ import Input from '@components/form/Input';
 import { useForm } from 'react-hook-form';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { loginRequest } from '~/store';
+import { Link, Navigate } from 'react-router-dom';
+import { RootState, loginRequest } from '~/store';
 
 const Login = () => {
     const dispatch=useDispatch();
-    const { error }=useSelector((state:any) => state.login);
+    const { error, isAuthenticated }=useSelector((state:RootState) => state.login);
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm();
+    } = useForm({
+        defaultValues: { 'phone': '0123456789', 'password': 12345678 }
+    });
 
     const onSubmit = (data: any) => {
         dispatch(loginRequest(data));
     };
     const formerror={ ...errors };
     return (
-        <div className="container mx-auto mt-8">
+        <>{isAuthenticated ? <Navigate to="/dashboard" /> : <div className="container mx-auto mt-8">
             <form
                 className="max-w-md mx-auto bg-white p-8 border border-gray-300 rounded shadow-md"
                 onSubmit={handleSubmit(onSubmit)}
@@ -52,20 +54,22 @@ const Login = () => {
                         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         type="submit"
                     >
-                    Sign in
+                Sign in
                     </button>
                 </div>
-                <div className="w-full flex justify-center mt-2  font-bold py-2 px-4">
-                    <span className='mr-1'>  New to OwnParking?</span>
+                <div className="w-full flex flex-col items-center justify-center mt-2  font-bold py-2 px-4">
+                    {/* <div className='mr-1'>  New to OwnParking?</div> */}
+                    <div className='w-full border-gray-300 border border-solid my-2 ' ></div>
                     <Link to={'/register'}
                         className=" text-blue-500 rounded focus:outline-none focus:shadow-outline"
                         type="button"
                     >
-                   Create an account
+               Create an account
                     </Link>
                 </div>
             </form>
-        </div>
+        </div>}</>
+
     );
 };
 

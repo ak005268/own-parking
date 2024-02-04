@@ -7,15 +7,16 @@ import Register from '@pages/register';
 import Login from '@pages/login';
 
 const routes: Route = wrapRoutes({
-    path: '/app',
+    path: '/',
     private: true,
     element: <LayoutOne />,
-    children: appRoutes
+    children: appRoutes,
+
 });
 
 export const router = createBrowserRouter([
-    { path: 'login', element: <Login/>, index: true, },
-    { path: '/', element: <Login/>, index: true, },
+    { path: 'login', element: <Login/>, },
+    { path: '/', element: <Login/> },
     { path: 'register', element: <Register/> },
     { path: '*', element: <>Not found</> },
     routes
