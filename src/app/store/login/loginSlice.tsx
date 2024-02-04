@@ -33,7 +33,7 @@ const loginSlice=createSlice({
             state.isAuthenticated=false;
 
         },
-        clearLoginState: (state) => {
+        clearLoginState: (_state) => {
             // Reset the state to the initial state
             return initialState;
         }

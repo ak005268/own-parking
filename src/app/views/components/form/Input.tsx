@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { ErrorMessage } from '@hookform/error-message';
 
 interface InputProps {
   type: 'text' | 'number' | 'email' | 'password';

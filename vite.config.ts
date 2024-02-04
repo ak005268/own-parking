@@ -10,6 +10,7 @@ export default defineConfig(({ mode }) => {
         server: {
             port: 3005
         },
+
         resolve: {
             alias: {
                 '~/*': new URL('./src/app', import.meta.url).pathname,

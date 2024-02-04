@@ -1,6 +1,6 @@
 import { http } from '~/services';
-import { getPost, postAdd } from './postSlices';
-import { ForkEffect, put, takeEvery } from 'redux-saga/effects';
+import { getPost } from './postSlices';
+import { ForkEffect, takeEvery } from 'redux-saga/effects';
 
 function* dataFetch(action: ReturnType<typeof getPost>): Generator{
 

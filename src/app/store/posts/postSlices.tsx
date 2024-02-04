@@ -32,7 +32,7 @@ const postsSlice=createSlice({
     name: 'posts',
     initialState,
     reducers: {
-        getPost: (state, action:PayloadAction<number>) => {
+        getPost: (state, _action:PayloadAction<number>) => {
             state.loading=true;
         },
         postAdd: (state, action) => {
