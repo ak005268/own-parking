@@ -3,7 +3,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getPost } from '~/store/posts';
+import { signUpRequest } from '~/store';
 
 const Register = () => {
     const dispatch=useDispatch();
@@ -14,7 +14,7 @@ const Register = () => {
     } = useForm();
 
     const onSubmit = (data: any) => {
-        dispatch(getPost(data));
+        dispatch(signUpRequest(data));
     };
     const error={ ...errors };
     return (

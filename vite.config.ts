@@ -17,7 +17,7 @@ export default defineConfig(({ mode }) => {
                 '@components/*': new URL('./src/app/views/components/*', import.meta.url).pathname,
                 '@layouts/*': new URL('./src/app/views/layouts/*', import.meta.url).pathname,
                 '@pages/*': new URL('./src/app/views/pages/*', import.meta.url).pathname,
-                '@assets/*': new URL('../src/assets/*', import.meta.url).pathname,
+                '@assets/*': new URL('./src/assets/*', import.meta.url).pathname,
             },
         },
         define: {
