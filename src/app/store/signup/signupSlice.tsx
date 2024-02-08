@@ -18,9 +18,10 @@ const signupSlice = createSlice({
             state.isRequesting = true;
             state.error = null;
         },
-        signUpSuccess: (state, _action) => {
+        signUpSuccess: (state, action) => {
             state.isRequesting = false;
             state.error = null;
+            state.signupData=action.payload;
         },
         signUpFail: (state, action) => {
             state.isRequesting =false ;

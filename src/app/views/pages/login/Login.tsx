@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
 import { RootState, loginRequest } from '~/store';
-import { login_pd, wave } from '../../../../assets/images';
+import { login_pd} from '../../../../assets/images';
 
 const Login = () => {
     const dispatch=useDispatch();

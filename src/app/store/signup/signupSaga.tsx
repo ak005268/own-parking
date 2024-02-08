@@ -6,8 +6,8 @@ function* signupSaga(action: ReturnType<typeof signUpRequest>): Generator{
 
     try{
         const response: any =yield http.post('/auth/register', action?.payload);
-        console.log('response=>', response.data)
-        // yield put(signUpSuccess(response.data));
+        // console.log('response=>', response.data)
+        yield put(signUpSuccess(response.data));
 
     }
     catch(err:any){
