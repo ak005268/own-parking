@@ -5,7 +5,8 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
 import { RootState, loginRequest } from '~/store';
-import { login_pd} from '../../../../assets/images';
+import { login_pd } from '../../../../assets/images';
+import { validationRules } from '~/utils';
 
 const Login = () => {
     const dispatch=useDispatch();
@@ -29,7 +30,7 @@ const Login = () => {
                 <div className='flex justify-center items-center h-screen '>
 
                     {/* <img src={wave} alt='wave' className='z-0 absolute rotate-90 left-0 h-screen ' /> */}
-                    <img src={login_pd} width={550} className='z-[1] ' alt='login'/>
+                    <img src={login_pd} width={500} className='z-[1] ' alt='login'/>
                 </div>
             </div>
             <div className='w-full h-screen flex items-center'>
@@ -49,6 +50,7 @@ const Login = () => {
                                 name='phone'
                                 errors={formerror?.phone?.message}
                                 register={register}
+                                rules={validationRules.phone}
                             />
                         </div>
                         <div className="mb-4">
@@ -57,6 +59,7 @@ const Login = () => {
                                 label="Password"
                                 name='password'
                                 errors={formerror?.password?.message}
+                                rules={validationRules.password}
                                 register={register}
                             />
                         </div>

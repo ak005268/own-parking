@@ -1,0 +1,7 @@
+.dashboard {
+    background-color: red;
+}
+
+.sample1 {
+    @include sample(rgba(239, 193, 65, 0.397));
+}

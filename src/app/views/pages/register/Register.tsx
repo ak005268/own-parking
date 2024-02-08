@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { signUpRequest } from '~/store';
+import { validationRules } from '~/utils';
 
 const Register = () => {
     const dispatch=useDispatch();
@@ -18,6 +19,7 @@ const Register = () => {
     };
     const error={ ...errors };
     return (
+        
         <div className="container mx-auto mt-8">
             <form
                 className="max-w-md mx-auto bg-white p-8 border border-gray-300 rounded shadow-md"
@@ -31,6 +33,7 @@ const Register = () => {
                         name='name'
                         register={register}
                         errors={error?.name?.message}
+                        rules={validationRules.name}
                         placeholder='First and last name'
                     />
                 </div>
@@ -41,6 +44,7 @@ const Register = () => {
                         name='orgName'
                         register={register}
                         errors={error?.orgName?.message}
+                        rules={validationRules.companyname}
                         placeholder='First and last name'
                     />
                 </div>
@@ -51,6 +55,7 @@ const Register = () => {
                         name='email'
                         register={register}
                         errors={error?.email?.message}
+                        rules={validationRules.email}
 
                     />
                 </div>
@@ -61,6 +66,7 @@ const Register = () => {
                         name='phone'
                         errors={error?.phone?.message}
                         register={register}
+                        rules={validationRules.phone}
                     />
                 </div>
                 <div className="mb-4">
@@ -71,6 +77,7 @@ const Register = () => {
                         errors={error?.password?.message}
                         placeholder='At least 6 characters'
                         register={register}
+                        rules={validationRules.password}
                     />
                 </div>
 
