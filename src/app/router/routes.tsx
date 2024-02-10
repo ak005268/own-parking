@@ -1,6 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { appRoutes } from '~/views/pages';
-import LayoutOne from '@layouts/appLayout';
 import { wrapRoutes } from './wrapper';
 import { Route } from './types';
 import Register from '@pages/register';
