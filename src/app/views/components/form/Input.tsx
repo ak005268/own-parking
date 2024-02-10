@@ -22,11 +22,9 @@ const Input: FC<InputProps> = ({
     disabled = false,
 }) => {
 
-    // document.addEventListener('mousewheel', function(event) {
-    //     if (window?.document.activeElement.type === 'number') {
-    //         event.preventDefault();
-    //     }
-    // });
+    const handleWheel = (e:any) => {
+        e.preventDefault();
+    };
 
     return (
         <div className="input-wrapper">
@@ -44,7 +42,7 @@ const Input: FC<InputProps> = ({
                 name={name}
                 placeholder={placeholder}
                 disabled={disabled}
-                onWheel={event => { event.preventDefault(); }}
+                onWheel={handleWheel}
                 inputMode={type === 'number' ? 'text' : undefined}
             />
 

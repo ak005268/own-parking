@@ -8,6 +8,7 @@ class AxiosService {
     constructor({ baseURL, timeOut }: AxiosConfig) {
         this.instance = axios.create({
             baseURL,
+            withCredentials: true,
             timeout: timeOut || 10000,
             headers: {
                 'Content-Type': 'application/json',

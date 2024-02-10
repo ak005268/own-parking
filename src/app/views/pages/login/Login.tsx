@@ -28,7 +28,6 @@ const Login = () => {
 
             <div className=' hidden lg:block  w-full'>
                 <div className='flex justify-center items-center h-screen '>
-
                     {/* <img src={wave} alt='wave' className='z-0 absolute rotate-90 left-0 h-screen ' /> */}
                     <img src={login_pd} width={500} className='z-[1] ' alt='login'/>
                 </div>

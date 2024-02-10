@@ -1,13 +1,16 @@
+import GlobalLoader from '@components/GlobalLoader';
 import Input from '@components/form/Input';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { signUpRequest } from '~/store';
+import { RootState, signUpRequest } from '~/store';
 import { validationRules } from '~/utils';
-
 const Register = () => {
     const dispatch=useDispatch();
+    const { isRequesting }=useSelector((state:RootState) => state.signup);
+
     const {
         register,
         handleSubmit,
@@ -19,8 +22,10 @@ const Register = () => {
     };
     const error={ ...errors };
     return (
-        
+
         <div className="container mx-auto mt-8">
+
+            {isRequesting && <GlobalLoader/>}
             <form
                 className="max-w-md mx-auto bg-white p-8 border border-gray-300 rounded shadow-md"
                 onSubmit={handleSubmit(onSubmit)}
@@ -34,7 +39,8 @@ const Register = () => {
                         register={register}
                         errors={error?.name?.message}
                         rules={validationRules.name}
-                        placeholder='First and last name'
+                        placeholder="Enter your first and last name"
+
                     />
                 </div>
                 <div className="mb-4">
@@ -45,7 +51,8 @@ const Register = () => {
                         register={register}
                         errors={error?.orgName?.message}
                         rules={validationRules.companyname}
-                        placeholder='First and last name'
+                        placeholder="Enter your company name"
+
                     />
                 </div>
                 <div className="mb-4">
@@ -56,6 +63,7 @@ const Register = () => {
                         register={register}
                         errors={error?.email?.message}
                         rules={validationRules.email}
+                        placeholder="Enter your email"
 
                     />
                 </div>
@@ -67,6 +75,8 @@ const Register = () => {
                         errors={error?.phone?.message}
                         register={register}
                         rules={validationRules.phone}
+                        placeholder="Enter your mobile number"
+
                     />
                 </div>
                 <div className="mb-4">
@@ -75,7 +85,7 @@ const Register = () => {
                         label="Password"
                         name='password'
                         errors={error?.password?.message}
-                        placeholder='At least 6 characters'
+                        placeholder="Enter your password (at least 6 characters)"
                         register={register}
                         rules={validationRules.password}
                     />

@@ -12,8 +12,8 @@ input[type=number] {
 
 /* Hide the scrollbar track when not scrolling */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 4px;
+  height: 1px;
 }
 
 /* Track */
@@ -24,7 +24,7 @@ input[type=number] {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 50px;
-  background: #43f46c;
+  background: #aab2b86c;
 }
 
 /* Handle on hover */

@@ -4,6 +4,7 @@ import { store } from '~/store/store';
 import { router } from './app/router';
 import './index.css';
 import './assets/scss/main.scss';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
     return (
