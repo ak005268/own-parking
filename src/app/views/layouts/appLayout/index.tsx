@@ -2,13 +2,12 @@ import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Sidebar from './Sidebar';
 
-const AppLayout = () => {
+const AppLayout = ():unknown => {
     return (
-        <div className=''>
-         
+        <div className=' bg-color-white'>
 
             <Header/>
-           
+
             <Sidebar/>
 
             <Outlet />

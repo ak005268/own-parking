@@ -29,7 +29,7 @@ const Dashboard = () => {
 
     };
     return (
-        <div className='mt-10 text-center text-green-500 font-bold text-base'>Dashboard
+        <div className='pt-10 text-center text-green-500 font-bold text-base'>Dashboard
             <div className='mb-5'>
                 <button className=' px-4 py-2 rounded-md bg-slate-700 text-fuchsia-600 ' onClick={callApi}>Api call</button>
             </div>
