@@ -11,7 +11,7 @@ const PrivateRoute = ({ children }: PrivateRouteProps): JSX.Element => {
     const { isAuthenticated } =useSelector((state:RootState) => state.login);
 
     return (
-        <>{!isAuthenticated ? <Navigate to="/" /> : <>{children}</>}</>
+        <>{isAuthenticated ? <Navigate to="/" /> : <>{children}</>}</>
     );
 };
 

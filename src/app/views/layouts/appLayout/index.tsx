@@ -5,12 +5,18 @@ import Sidebar from './Sidebar';
 const AppLayout = () => {
     return (
         <div className=' bg-color-white'>
+            <div>
+                <Header/>
+            </div>
+            <div className='flex'>
+                <div className='hidden md:block'>
+                    <Sidebar/>
+                </div>
+                <div className='w-full'>
+                    <Outlet />
+                </div>
 
-            <Header/>
-
-            <Sidebar/>
-
-            <Outlet />
+            </div>
 
         </div>
     );
