@@ -27,7 +27,7 @@ const Register = () => {
 
             {isRequesting && <GlobalLoader/>}
             <form
-                className="max-w-md mx-auto bg-white p-8 border border-gray-300 rounded shadow-md"
+                className="max-w-md mx-auto border-color-green-10 bg-white p-8 border border-gray-300 rounded shadow-md"
                 onSubmit={handleSubmit(onSubmit)}
             >
                 <h2 className="text-2xl font-semibold text-center mb-4">Create account</h2>

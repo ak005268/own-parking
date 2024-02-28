@@ -15,16 +15,21 @@ export default {
             'color-white': '#FFFFFF',
             'color-orange': '#E56B1A',
             'color-black': '#171412',
-
             // white
 
             //orange
+
+            //green
+            'color-green': {
+                10: '#90ee90'
+            },
 
             //gray
             'color-gray': {
                 10: '#877363',
                 20: '#F5F2F0',
                 30: '#E5E8EB',
+                40: '#BEC8D0'
             }
             //black
 
