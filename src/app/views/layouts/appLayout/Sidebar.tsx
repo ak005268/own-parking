@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 
 const Sidebar = (props:any) => {
     const {sidebarHandler,sidebarOpen}=props;

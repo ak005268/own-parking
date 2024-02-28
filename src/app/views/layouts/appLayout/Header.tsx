@@ -1,24 +1,24 @@
 /* eslint-disable max-len */
 import { useSelector } from 'react-redux';
-import { toast, Bounce } from 'react-toastify';
+// import { toast, Bounce } from 'react-toastify';
 import { RootState } from '~/store';
 import { user } from '../../../../assets/images/Images';
 
 const Header = (props:any) => {
-    const { sidebarHandler, sidebarOpen }=props;
+    const {  sidebarOpen }=props;
 
-    const notify = () => toast('🦄 Wow so easy!', {
+    // const notify = () => toast('🦄 Wow so easy!', {
 
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'light',
-        transition: Bounce,
-    });
+    //     position: 'top-right',
+    //     autoClose: 5000,
+    //     hideProgressBar: false,
+    //     closeOnClick: true,
+    //     pauseOnHover: true,
+    //     draggable: true,
+    //     progress: undefined,
+    //     theme: 'light',
+    //     transition: Bounce,
+    // });
     const userName=useSelector((state:RootState) => state.login);
     const headerClass=sidebarOpen? 'lg:w-[calc(100%_-_80px)]':'lg:w-[calc(100%_-_200px)] ';
     return (
