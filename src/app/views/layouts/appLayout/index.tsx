@@ -21,7 +21,7 @@ const AppLayout = () => {
                 </div>
                 <div className='w-full header-outlet px-5 overflow-y-auto'>
                     <Header sidebarHandler={sidebarHandler} sidebarOpen={sidebarOpen}/>
-                    <div className={`${headerClass}  mt-[60px]`}>
+                    <div className={`${headerClass}  mt-[60px] ease-in-out duration-1000`}>
 
                         <Outlet />
 
