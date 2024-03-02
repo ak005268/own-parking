@@ -35,8 +35,8 @@ const Header = (props:any) => {
 
             {userProfileShow && (
 
-                <div><div className='w-full h-screen z-[100] fixed' onClick={() => setuserProfileShow(false)}></div>
-                    <div className={' ease-in-out duration-500 z-50 fixed top-14 right-10 lg:w-[200px] w-full header-outlet px-5 py-4 overflow-y-auto w-[250px] rounded-xl bg-color-white opacity-100'}>
+                <div><div className='w-full h-screen z-[99] fixed ' onClick={() => setuserProfileShow(false)}></div>
+                    <div className={' ease-in-out duration-500 z-[101] fixed top-14 right-10 lg:w-[200px] w-full header-outlet px-5 py-4 overflow-y-auto w-[250px] rounded-xl bg-color-white opacity-100'}>
 
                         {menu.map((item:any) => ( <button key={`menu-${item}`} onClick={() => alert(item)} className=' hover:bg-color-orange hover:rounded-lg w-full py-3 ease-in-out duration-300'>
                             {item}
