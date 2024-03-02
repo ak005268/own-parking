@@ -33,7 +33,7 @@ const Sidebar = (props:any) => {
 
     return (
         <>
-            <div className={`${sidebarClass} fixed z-[99]  h-screen ease-in-out duration-1000  bg-color-white bg-opacity-50 shadow-2xl flex flex-col px-2 gap-2 border-r border-r-color-gray-40`}>
+            <div className={`${sidebarClass} fixed z-[98]  h-screen ease-in-out duration-1000  bg-color-white bg-opacity-50 shadow-2xl flex flex-col px-2 gap-2 border-r border-r-color-gray-40`}>
                 {logo}
 
                 {sideMenu.map((item:any) => (
