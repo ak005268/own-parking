@@ -23,3 +23,48 @@
 //     backdrop-filter: blur(8px);
 //     z-index: 1200;
 // }
+
+.css-14vsnn9 {
+    background-color: rgb(255, 255, 255);
+    color: rgb(29, 38, 48);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    box-shadow: rgba(19, 25, 32, 0.08) 0px 8px 24px;
+    width: 290px;
+    min-width: 240px;
+    max-width: 290px;
+    border-radius: 12px;
+}
+
+/* Define animation keyframes */
+@keyframes expandShrink {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 100%;
+    }
+    100% {
+      width: 0;
+    }
+  }
+  
+  /* Apply animation to logo */
+  .animate-logo {
+    animation: expandShrink 1s ease-in-out alternate-reverse; /* Use the expandShrink animation with 3 second duration */
+  }
+  
+
+  @keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    animation: slideIn 5s ease-in-out;
+}

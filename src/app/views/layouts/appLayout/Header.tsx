@@ -3,89 +3,49 @@ import { useSelector } from 'react-redux';
 // import { toast, Bounce } from 'react-toastify';
 import { RootState } from '~/store';
 import { user } from '../../../../assets/images/Images';
+import { useState } from 'react';
 
 const Header = (props:any) => {
-    const {  sidebarOpen }=props;
+    const { sidebarOpen }=props;
+    const [userProfileShow, setuserProfileShow] = useState(false);
+    console.log('userProfileShow=>', userProfileShow);
+    const menu=['Profile', 'Setting', 'Subscriptions', 'Log out',];
 
-    // const notify = () => toast('🦄 Wow so easy!', {
-
-    //     position: 'top-right',
-    //     autoClose: 5000,
-    //     hideProgressBar: false,
-    //     closeOnClick: true,
-    //     pauseOnHover: true,
-    //     draggable: true,
-    //     progress: undefined,
-    //     theme: 'light',
-    //     transition: Bounce,
-    // });
     const userName=useSelector((state:RootState) => state.login);
     const headerClass=sidebarOpen? 'lg:w-[calc(100%_-_80px)]':'lg:w-[calc(100%_-_200px)] ';
+    // const userProfileRef = useRef(null);
+    // const menuRef = useRef(null);
+
+    const aa=() => {
+        setuserProfileShow(!userProfileShow);
+    };
     return (
-        <div className={`fixed css-n79cd2 px-5 flex flex-col top-0 right-0 w-full ease-in-out duration-1000 backdrop-blur-md bg-color-white  opacity-80 left-auto ${headerClass}`}>
-            <div className=' h-[60px] flex  items-center p-5 bg-opacity-70'>
-                <div className='w-full'> Welcome {userName?.userData?.data?.name} </div>
-                <div className='w-full'> Welcome</div>
-                <div className='relative'>
-
-                <button className=''>
-                    <img src={user} width={60} height={30} alt='hi'/>
-                </button>
-                <div className='absolute top-8 shadow-2xl transform right-0 w-[300px] h-[400px] rounded-xl bg-color-green-10'>
-
+        <div className='relative'>
+            <div style={{ backdropFilter: 'saturate(180%) blur(2px)' }} className={`fixed px-5 flex inset-auto flex-col top-0 right-0 w-full ease-in-out duration-1000 bg-[hsla(0,0%,100%,.8)] opacity-80 left-auto ${headerClass}`}>
+                <div className=' h-[60px] flex  items-center px-1 lg:px-5 bg-opacity-70'>
+                    <div className='w-full'> Welcome {userName?.userData?.data?.name} </div>
+                    <div className='w-full'> Welcome</div>
+                    <div className='relative'>
+                        <button onClick={aa}>
+                            <img src={user} width={90} height={30} alt='hi'/>
+                        </button>
+                    </div>
                 </div>
-                </div>
-
             </div>
 
-            {/* <div className="drawer fixed">
-                <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content flex flex-col">
-                    <div className="w-full navbar bg-color-white p-0 min-h-8 border-b-2 border-color-gray-30 ">
-                        <div className="flex-none lg:hidden">
-                            <label htmlFor="my-drawer-3" aria-label="open sidebar" className="btn btn-square btn-ghost">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                            </label>
-                        </div>
-                        <div className="flex-1 px-2 mx-2 text-sm font-bold">Welcome {user?.userData?.data?.name}</div>
-                        <div className="flex-none hidden lg:block">
-                            <ul className="menu menu-horizontal items-center text-xs p-0">
-                                <li><a>Dashboard</a></li>
-                                <li><a>Reports</a></li>
+            {userProfileShow && (
 
-                                <button onClick={notify} className="btn bg-color-orange hover:bg-color-orange  text-color-white w-[106px] h-[27px] text-[10px] p-0 rounded-lg min-h-3 max-h-9 mr-6 ml-3">New Entry</button>
+                <div><div className='w-full h-screen z-[100] fixed' onClick={() => setuserProfileShow(false)}></div>
+                    <div className={' ease-in-out duration-500 z-50 fixed top-14 right-10 lg:w-[200px] w-full header-outlet px-5 py-4 overflow-y-auto w-[250px] rounded-xl bg-color-white opacity-100'}>
 
-                                <div className="avatar">
-                                    <div className="w-8 h-8 rounded-full mr-4 justify-center">
-                                        <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                                    </div>
-                                </div>
+                        {menu.map((item:any) => ( <button key={`menu-${item}`} onClick={() => alert(item)} className=' hover:bg-color-orange hover:rounded-lg w-full py-3 ease-in-out duration-300'>
+                            {item}
+                        </button>))}
 
-                                <ul className="menu lg:menu-horizontal bg-base-200 rounded-box p-0 ">
-                                    <li>
-                                        <details >
-                                            <summary>Parent item</summary>
-                                            <ul>
-                                                <li><a>Branch 1</a></li>
-
-                                            </ul>
-                                        </details>
-                                    </li>
-                                </ul>
-
-                            </ul>
-                        </div>
                     </div>
+                </div>
 
-                </div>
-                <div className="drawer-side">
-                    <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 min-h-full bg-base-200">
-                        <li><a>Sidebar Item 1</a></li>
-                        <li><a>Sidebar Item 2</a></li>
-                    </ul>
-                </div>
-            </div> */}
+            )}
 
         </div>
     );
