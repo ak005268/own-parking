@@ -15,6 +15,7 @@ export default {
             'color-white': '#FFFFFF',
             'color-orange': '#E56B1A',
             'color-black': '#171412',
+            'color-red': '#FF0000',
             // white
 
             //orange
@@ -29,7 +30,8 @@ export default {
                 10: '#877363',
                 20: '#F5F2F0',
                 30: '#E5E8EB',
-                40: '#BEC8D0'
+                40: '#BEC8D0',
+                50: '#F3F5F7',
             }
             //black
 
