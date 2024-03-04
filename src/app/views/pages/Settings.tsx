@@ -1,7 +1,7 @@
 
 const Settings = () => {
     return (
-        <div>Settings</div>
+        <div className="bg-color-green-10 h-[1000px]">Settings</div>
     );
 };
 

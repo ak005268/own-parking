@@ -8,7 +8,8 @@ export default defineConfig(({ mode }) => {
     return {
         plugins: [tsconfigPaths(), react()],
         server: {
-            port: 3005
+            port: 3005,
+            host: true
         },
 
         resolve: {

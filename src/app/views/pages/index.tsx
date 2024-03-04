@@ -7,6 +7,31 @@ export const appRoutes: Route[] = [{
     element: <Dashboard />,
     private: true,
 }, {
+    path: 'entry',
+    element: <Settings />,
+    private: true,
+},
+{
+    path: 'out',
+    element: <Settings />,
+    private: true,
+},
+{
+    path: 'history',
+    element: <Settings />,
+    private: true,
+},
+{
+    path: 'cash',
+    element: <Settings />,
+    private: true,
+},
+{
+    path: 'branch',
+    element: <Settings />,
+    private: true,
+},
+{
     path: 'settings',
     element: <Settings />,
     private: true,
