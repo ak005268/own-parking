@@ -4,25 +4,16 @@ import { store } from '~/store/store';
 import { router } from './app/router';
 import './index.css';
 import './assets/scss/main.scss';
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
+import { Toaster } from 'sonner';
 
 function App() {
     return (
         <>
-            <ToastContainer
+            <Toaster
                 position="top-center"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="light"
-                // transition Bounce
+                richColors
             />
+
             <Provider store={store}>
                 <RouterProvider router={router} />
             </Provider>
