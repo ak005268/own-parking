@@ -1,10 +1,7 @@
-import { useDispatch } from 'react-redux';
 import { http } from '~/services';
-import { clearLoginState } from '~/store';
 import { toast } from 'sonner';
 
 const Dashboard = () => {
-    const dispatch=useDispatch();
 
     const callApi=() => {
         const response= http.get('/branch');
@@ -15,10 +12,7 @@ const Dashboard = () => {
         toast.success('This is a sonner toast');
     };
 
-    const logout=() => {
-        dispatch(clearLoginState());
-
-    };
+ 
     return (
         <div className='h-[1500px] bg-color-gray-30 mx-5 text-center text-green-500 font-bold text-base'>Dashboard
             <div className='mb-5'>
