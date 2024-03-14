@@ -16,7 +16,7 @@ const Login = () => {
         handleSubmit,
         formState: { errors },
     } = useForm({
-        defaultValues: { 'phone': '0123456789', 'password': 12345678 }
+        defaultValues: { 'phone': '1234567890', 'password': 12345678 }
     });
 
     const onSubmit = (data: any) => {
