@@ -1,6 +1,10 @@
 import { Route } from '~/router/types';
 import Settings from './Settings';
 import Dashboard from './dashboard/Dashboard';
+import OutEntry from './OutEntry';
+import Cash from './Cash';
+import Branch from './Branch';
+import History from './History';
 
 export const appRoutes: Route[] = [{
     path: 'dashboard',
@@ -8,27 +12,27 @@ export const appRoutes: Route[] = [{
     private: true,
 }, {
     path: 'entry',
-    element: <Settings />,
+    element: <Dashboard />,
     private: true,
 },
 {
     path: 'out',
-    element: <Settings />,
+    element: <OutEntry />,
     private: true,
 },
 {
     path: 'history',
-    element: <Settings />,
+    element: <History />,
     private: true,
 },
 {
     path: 'cash',
-    element: <Settings />,
+    element: <Cash />,
     private: true,
 },
 {
     path: 'branch',
-    element: <Settings />,
+    element: <Branch />,
     private: true,
 },
 {
