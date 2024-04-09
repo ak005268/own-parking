@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux';
 
 const Header = (props:any) => {
     const { sidebarOpen, sidebarHandler }=props;
-    const [userProfileShow, setuserProfileShow] = useState(false);
+    const [userProfileShow, setUserProfileShow] = useState(false);
     const menu=['Profile', 'Setting', 'Subscriptions', 'Log out',];
 
     const userName=useSelector((state:RootState) => state.login);
@@ -25,14 +25,14 @@ const Header = (props:any) => {
 
     return (
         <div className='relative'>
-            <div style={{ backdropFilter: 'saturate(180%) blur(2px)' }} className={`fixed lg:px-5 px-1 flex inset-auto flex-col top-0 right-0 w-full ease-in-out duration-1000 bg-[hsla(0,0%,100%,.8)] opacity-80 left-auto ${headerClass}`}>
+            <div style={{ backdropFilter: 'saturate(180%) blur(2px)' }} className={`fixed lg:px-5 px-1 flex inset-auto flex-col top-0 right-0 w-full ease-in-out duration-1000 bg-[hsla(0,1%,40%,1)] opacity-80 left-auto ${headerClass}`}>
                 <div className=' h-[60px] flex items-center px-1 lg:px-5 bg-opacity-70'>
                     <button type='button' onClick={() => sidebarHandler(!sidebarOpen)} className='lg:invisible mr-2'><MobileHamburgerIcon/></button>
                     <div className='w-full'> Welcome {userName?.userData?.data?.name} </div>
                     <div className='w-full'> </div>
                     <div className='relative'>
-                        <button onClick={() => setuserProfileShow(!userProfileShow)}>
-                            <img src={user} width={90} height={30} alt='hi'/>
+                        <button onClick={() => setUserProfileShow(!userProfileShow)}>
+                            <img src={user} width={90} height={30} alt='profile pic'/>
                         </button>
                     </div>
                 </div>
@@ -40,7 +40,7 @@ const Header = (props:any) => {
 
             {userProfileShow && (
 
-                <div><div className='w-full h-screen z-[99] fixed ' onClick={() => setuserProfileShow(false)}></div>
+                <div><div className='w-full h-screen z-[99] fixed ' onClick={() => setUserProfileShow(false)}></div>
                     <div className={' ease-in-out duration-500 z-[101] fixed top-14 lg:right-10 right-5 lg:w-[200px]  sm:w-20 header-outlet px-5 py-4 overflow-y-auto w-[200px] rounded-xl bg-color-white opacity-100'}>
 
                         {menu.map((item:any) => ( <button key={`menu-${item}`} onClick={() => logout(item)} className=' hover:bg-color-orange hover:bg-opacity-20 hover:text-color-orange hover:rounded-lg w-full py-3 ease-in-out duration-300'>
