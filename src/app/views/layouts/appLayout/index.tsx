@@ -13,7 +13,7 @@ const AppLayout = () => {
         setSidebarOpen(value);
     };
 
-    const headerClass=sidebarOpen? 'lg:ml-20':'lg:ml-[200px]';
+    const headerClass=sidebarOpen? 'lg:ml-[60px]':'lg:ml-[200px]';
 
     const sideMenu=[
         { icon: <EntryIcon size={25}/>, name: 'Entry', path: '/Entry' },

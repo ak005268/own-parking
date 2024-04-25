@@ -27,7 +27,7 @@ const Sidebar = ({ sidebarHandler, sidebarOpen, children }: { sidebarHandler: (o
         }
     }, [sidebarOpen]);
 
-    const sidebarClass=useMemo(() => sidebarOpen? 'lg:w-20 invisible lg:visible' : 'lg:w-[200px]', [sidebarOpen]);
+    const sidebarClass=useMemo(() => sidebarOpen? 'lg:w-[60px] invisible lg:visible' : 'lg:w-[200px]', [sidebarOpen]);
 
     const arrow = useMemo(() => sidebarOpen && 'rotate-180', [sidebarOpen]);
 
@@ -47,7 +47,7 @@ const Sidebar = ({ sidebarHandler, sidebarOpen, children }: { sidebarHandler: (o
                         <RightArrowIcon className='text-color-orange  rounded-full'/>
                     </button>
 
-                    <div className="border-t flex p-3">
+                    <div className="border-t flex pt-1 pb-3">
                         <div className="w-10 h-10 rounded-md bg-color-green-10 flex justify-center items-center px-3">AK</div>
                         <div
                             className={`

@@ -13,6 +13,8 @@ const Dashboard = () => {
     };
 
     return (
+        <>
+        hi
         <div className='h-[1500px] bg-color-gray-30 mx-5 text-center text-green-500 font-bold  pt-10 text-base'>Dashboard
             <div className='mb-5'>
                 <button className=' px-4 py-2 rounded-md bg-slate-700 text-fuchsia-600 ' onClick={callApi}>Api call</button>
@@ -33,6 +35,7 @@ const Dashboard = () => {
             </div>
 
         </div>
+        </>
     );
 };
 
