@@ -3,8 +3,9 @@ import Settings from './Settings';
 import Dashboard from './dashboard/Dashboard';
 import OutEntry from './OutEntry';
 import Cash from './Cash';
-import Branch from './Branch';
+import Branch from './branch/Branch';
 import History from './History';
+import BranchCreation from './branch/components/BranchCreation';
 
 export const appRoutes: Route[] = [{
     path: 'dashboard',
@@ -38,6 +39,10 @@ export const appRoutes: Route[] = [{
 {
     path: 'settings',
     element: <Settings />,
+    private: true,
+}, {
+    path: 'Branch/register',
+    element: <BranchCreation />,
     private: true,
 },
 ];

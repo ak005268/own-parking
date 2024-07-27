@@ -20,7 +20,7 @@ const Register = () => {
     const onSubmit = (data: any) => {
         dispatch(signUpRequest(data));
     };
-    const error={ ...errors };
+    const formError={ ...errors };
     return (
 
         <div className="container mx-auto mt-8">
@@ -37,7 +37,7 @@ const Register = () => {
                         label="Your name"
                         name='name'
                         register={register}
-                        errors={error?.name?.message}
+                        errors={formError?.name?.message}
                         rules={validationRules.name}
                         placeholder="Enter your first and last name"
 
@@ -49,7 +49,7 @@ const Register = () => {
                         label="Company name"
                         name='orgName'
                         register={register}
-                        errors={error?.orgName?.message}
+                        errors={formError?.orgName?.message}
                         rules={validationRules.companyname}
                         placeholder="Enter your company name"
 
@@ -61,7 +61,7 @@ const Register = () => {
                         label="Email"
                         name='email'
                         register={register}
-                        errors={error?.email?.message}
+                        errors={formError?.email?.message}
                         rules={validationRules.email}
                         placeholder="Enter your email"
 
@@ -72,7 +72,7 @@ const Register = () => {
                         type="number"
                         label="Mobile number"
                         name='phone'
-                        errors={error?.phone?.message}
+                        errors={formError?.phone?.message}
                         register={register}
                         rules={validationRules.phone}
                         placeholder="Enter your mobile number"
@@ -84,7 +84,7 @@ const Register = () => {
                         type="password"
                         label="Password"
                         name='password'
-                        errors={error?.password?.message}
+                        errors={formError?.password?.message}
                         placeholder="Enter your password (at least 6 characters)"
                         register={register}
                         rules={validationRules.password}

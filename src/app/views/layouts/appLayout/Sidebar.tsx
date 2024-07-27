@@ -33,7 +33,7 @@ const Sidebar = ({ sidebarHandler, sidebarOpen, children }: { sidebarHandler: (o
 
     return (
         <>
-            <div className={`${sidebarClass} fixed z-[98] h-full ease-in-out lg:duration-1000 bg-color-white shadow-2xl flex flex-col px-2 gap-2 border-r border-r-color-gray-40`}>
+            <div className={`${sidebarClass} fixed z-[40] h-full ease-in-out lg:duration-1000 bg-color-white shadow-2xl flex flex-col px-2 gap-2 border-r border-r-color-gray-40`}>
 
                 <div className='flex flex-col relative h-full'>
                     <div className='c-logo'>
