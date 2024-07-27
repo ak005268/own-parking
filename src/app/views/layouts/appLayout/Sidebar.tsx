@@ -27,13 +27,13 @@ const Sidebar = ({ sidebarHandler, sidebarOpen, children }: { sidebarHandler: (o
         }
     }, [sidebarOpen]);
 
-    const sidebarClass=useMemo(() => sidebarOpen? 'lg:w-20 invisible lg:visible' : 'lg:w-[200px]', [sidebarOpen]);
+    const sidebarClass=useMemo(() => sidebarOpen? 'lg:w-[60px] invisible lg:visible' : 'lg:w-[200px]', [sidebarOpen]);
 
     const arrow = useMemo(() => sidebarOpen && 'rotate-180', [sidebarOpen]);
 
     return (
         <>
-            <div className={`${sidebarClass} fixed z-[98] h-full ease-in-out lg:duration-1000 bg-color-white shadow-2xl flex flex-col px-2 gap-2 border-r border-r-color-gray-40`}>
+            <div className={`${sidebarClass} fixed z-[40] h-full ease-in-out lg:duration-1000 bg-color-white shadow-2xl flex flex-col px-2 gap-2 border-r border-r-color-gray-40`}>
 
                 <div className='flex flex-col relative h-full'>
                     <div className='c-logo'>
@@ -47,7 +47,7 @@ const Sidebar = ({ sidebarHandler, sidebarOpen, children }: { sidebarHandler: (o
                         <RightArrowIcon className='text-color-orange  rounded-full'/>
                     </button>
 
-                    <div className="border-t flex p-3">
+                    <div className="border-t flex pt-1 pb-3">
                         <div className="w-10 h-10 rounded-md bg-color-green-10 flex justify-center items-center px-3">AK</div>
                         <div
                             className={`

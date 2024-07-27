@@ -14,7 +14,7 @@ const Header = (props:any) => {
 
     const userName=useSelector((state:RootState) => state.login);
     const dispatch=useDispatch();
-    const headerClass = sidebarOpen ? 'lg:w-[calc(100%_-_80px)]':'lg:w-[calc(100%_-_200px)] ';
+    const headerClass = sidebarOpen ? 'lg:w-[calc(100%_-_57px)]':'lg:w-[calc(100%_-_200px)] ';
     const logout=(value:string) => {
         if(value === 'Log out'){
 

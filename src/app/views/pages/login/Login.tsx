@@ -34,7 +34,7 @@ const Login = () => {
             </div>
             <div className='w-full h-screen flex items-center'>
 
-                {isAuthenticated ? <Navigate to="/dashboard" /> : <div className="container mx-auto mt-8">
+                {isAuthenticated ? <Navigate to="/Entry" /> : <div className="container mx-auto mt-8">
                     {isRequesting && <GlobalLoader/>}
                     <form
                         className="max-w-md border-color-green-10 mx-auto bg-white p-8 border border-gray-300 rounded shadow-md"
