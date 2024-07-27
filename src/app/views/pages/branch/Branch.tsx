@@ -6,7 +6,6 @@ import { http } from '~/services';
 const Branch = () => {
     const [branchList, setBranchList] = useState<any[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null);
 
     const callApi = async () => {
         try {
@@ -15,7 +14,7 @@ const Branch = () => {
             setBranchList(result || []);
             setLoading(false);
         } catch (err) {
-            setError('Failed to fetch branch details');
+            console.log('Failed to fetch branch details');
             setLoading(false);
         }
     };
