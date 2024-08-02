@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux';
-import exampleReducer from './example/slice';
 import { loginReducer } from './login';
 import { signupReducer } from './signup'
 import { branchReducer } from './branch/branchSlice';
+import { ticketReducer } from './ticket';
 
 const rootReducer = combineReducers({
-    example: exampleReducer,
     login: loginReducer,
     signup: signupReducer,
-    branch: branchReducer
+    branch: branchReducer,
+    ticket: ticketReducer,
 });
 
 export { rootReducer };
