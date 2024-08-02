@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 // import { http } from '~/services';
-import { toast } from 'sonner';
+// import { toast } from 'sonner';
 import TicketEntry from './components/TicketEntry';
 // import ModalWindow from '@components/common/ModalWindow';
 
@@ -11,9 +11,9 @@ const Dashboard = () => {
     //     console.log('response=>', response);
 
     // };
-    const notify = () => {
-        toast.success('Successfully Created');
-    };
+    // const notify = () => {
+    //     toast.success('Successfully Created');
+    // };
 
     return (
         <>
