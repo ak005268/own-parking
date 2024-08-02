@@ -1,5 +1,6 @@
 import GlobalLoader from '@components/GlobalLoader';
 import { useEffect, useState } from 'react';
+import { IoIosAddCircleOutline } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import { http } from '~/services';
 
@@ -8,15 +9,12 @@ const Branch = () => {
     const [loading, setLoading] = useState<boolean>(true);
 
     const callApi = async () => {
-        try {
-            const response = await http.get('/branch');
-            const result = response?.data?.data?.branchList;
-            setBranchList(result || []);
-            setLoading(false);
-        } catch (err) {
-            console.log('Failed to fetch branch details');
-            setLoading(false);
-        }
+
+        const response = await http.get('/branch');
+        const result = response?.data?.data?.branchList;
+        setBranchList(result || []);
+        setLoading(false);
+
     };
 
     useEffect(() => {
@@ -24,13 +22,20 @@ const Branch = () => {
     }, []);
 
     return (
-        <div className='h-[1000px] bg-color-white px-5'>
+        <div className='h-full bg-color-white px-5'>
             {loading && <GlobalLoader/>}
-            <div className='flex '>
-                <div className="w-full">Branch Details</div>
-                <div className="w-full">
-                    <Link to='register'>Create Branch</Link>
-                </div>
+            <div className='flex justify-between'>
+
+                <Link to="/Branch">Branch Details</Link>
+
+                <Link to='/Branch/register'>
+                    <div className='flex items-end'>
+                        <div>  Create Branch</div>
+                        <div> <IoIosAddCircleOutline style={{ marginLeft: '0.2rem', color: 'green' }}/></div>
+
+                    </div>
+              </Link>
+
             </div>
             {branchList.length > 0 ? (
                 branchList.map((branch, index) => (

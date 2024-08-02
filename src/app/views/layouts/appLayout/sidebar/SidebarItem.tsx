@@ -6,7 +6,7 @@ const SidebarItem = (props:any) => {
             <li className={`relative cursor-pointer justify-center flex items-center py-2 px-3 my-1 
         font-medium rounded-md transition-colors group ${active ? 'bg-color-orange text-color-orange font-bold bg-opacity-20':'hover:bg-color-gray-50'} `}>
                 {icon}
-                <span className={`overflow-x-hidden overflow-y-hidden ${!sidebarOpen?' transition-all ml-3 w-full':'w-0'} `}>{text}</span>
+                <span className={`overflow-x-hidden overflow-y-hidden h-[22px] ${!sidebarOpen?' transition-all ml-3 w-full':'w-0'} `}>{text}</span>
 
                 {sidebarOpen && (
                     <div className={`absolute left-full rounded-md px-3 py-1 ml-6 bg-color-gray-50 

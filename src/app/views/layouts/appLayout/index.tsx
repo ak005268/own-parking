@@ -34,7 +34,7 @@ const AppLayout = () => {
                                 key={`sidebar-me-${index}`}
                                 text={item.name}
                                 icon={item.icon}
-                                active={location.pathname === item.path}
+                                active={location.pathname.startsWith(item.path)}
                             />
                         ))}
                     </Sidebar>

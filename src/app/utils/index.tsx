@@ -46,4 +46,8 @@ export const validationRules = {
             message: 'Invalid email address.',
         },
     },
+    important: {
+        required: 'This filed is required.',
+    }
+
 };

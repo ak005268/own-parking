@@ -1,9 +1,13 @@
 /* eslint-disable max-len */
 import { ReactNode, useMemo } from 'react';
 import { RightArrowIcon } from '../../../../assets/icons/Icons';
+import { useSelector } from 'react-redux';
+import { RootState } from '~/store';
 
 const Sidebar = ({ sidebarHandler, sidebarOpen, children }: { sidebarHandler: (open: boolean) => void, sidebarOpen: boolean, children: ReactNode }) => {
-    // const { sidebarHandler, sidebarOpen }=props;
+
+    const userName=useSelector((state:RootState) => state.login);
+
     const logo = useMemo(() => {
         if (!sidebarOpen) {
             return (
@@ -54,8 +58,8 @@ const Sidebar = ({ sidebarHandler, sidebarOpen, children }: { sidebarHandler: (o
                              flex justify-between items-center overflow-hidden transition-all  ${!sidebarOpen ? 'w-52 ml-3' : 'w-0'}                          `}
                         >
                             <div className="leading-4">
-                                <h4 className="font-semibold">Arun Kumar</h4>
-                                <span className="text-[10px] text-gray-600">arunkumar@gmail.com</span>
+                                <h4 className="font-semibold">{userName?.userData?.data?.name}</h4>
+                                <span className="text-[10px] text-gray-600">{userName?.userData?.data?.email}</span>
                             </div>
                         </div>
                     </div>
